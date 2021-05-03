@@ -3,7 +3,7 @@
  * @param {string} path - Path to JSON file to be fetched
  */
 async function fetchJsonFile(path) {
-  const response = await fetch(path);
+  const response = await fetch(path, {mode: 'cors'});
   if (!response.ok) {
     throw new Error(response.statusText);
   } else {
