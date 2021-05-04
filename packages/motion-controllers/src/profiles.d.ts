@@ -5,5 +5,6 @@ export function fetchProfile(
   xrInputSource: object,
   basePath: string,
   defaultProfileId?: string,
-  getAssetPath?: boolean
+  getAssetPath?: boolean,
+  profilePriorities?: string[]
 ): Promise<{ profile: object; assetPath?: string }>;

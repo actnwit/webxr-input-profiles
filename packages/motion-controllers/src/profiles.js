@@ -21,7 +21,7 @@ async function fetchProfilesList(basePath) {
   return profilesList;
 }
 
-async function fetchProfile(xrInputSource, basePath, defaultProfile = null, getAssetPath = true) {
+async function fetchProfile(xrInputSource, basePath, defaultProfile = null, getAssetPath = true, profilePriorities = []) {
   if (!xrInputSource) {
     throw new Error('No xrInputSource supplied');
   }
@@ -35,17 +35,34 @@ async function fetchProfile(xrInputSource, basePath, defaultProfile = null, getA
 
   // Find the relative path to the first requested profile that is recognized
   let match;
-  xrInputSource.profiles.some((profileId) => {
-    const supportedProfile = supportedProfilesList[profileId];
-    if (supportedProfile) {
-      match = {
-        profileId,
-        profilePath: `${basePath}/${supportedProfile.path}`,
-        deprecated: !!supportedProfile.deprecated
-      };
+  for (const profileIdPreferred of profilePriorities) {
+    for (const profileId of xrInputSource.profiles) {
+      if (profileIdPreferred !== profileId) {
+        continue;
+      }
+      const supportedProfile = supportedProfilesList[profileId];
+      if (supportedProfile) {
+        match = {
+          profileId,
+          profilePath: `${basePath}/${supportedProfile.path}`,
+          deprecated: !!supportedProfile.deprecated
+        };
+      }
     }
-    return !!match;
-  });
+  }
+
+  if (!match) {
+    for (const profileId of xrInputSource.profiles) {
+      const supportedProfile = supportedProfilesList[profileId];
+      if (supportedProfile) {
+        match = {
+          profileId,
+          profilePath: `${basePath}/${supportedProfile.path}`,
+          deprecated: !!supportedProfile.deprecated
+        };
+      }
+    }
+  }
 
   if (!match) {
     if (!defaultProfile) {
