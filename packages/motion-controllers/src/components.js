@@ -64,6 +64,8 @@ class Component {
         this.values.state = Constants.ComponentState.PRESSED;
       } else if (gamepadButton.touched || this.values.button > Constants.ButtonTouchThreshold) {
         this.values.state = Constants.ComponentState.TOUCHED;
+      } else {
+        this.values.state = Constants.ComponentState.DEFAULT;
       }
     }
 
