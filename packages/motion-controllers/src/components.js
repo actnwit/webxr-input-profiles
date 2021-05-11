@@ -60,9 +60,9 @@ class Component {
       this.values.button = (this.values.button > 1) ? 1 : this.values.button;
 
       // Set the state based on the button
-      if (gamepadButton.pressed || this.values.button === 1) {
+      if (gamepadButton.pressed && this.values.button === 1) {
         this.values.state = Constants.ComponentState.PRESSED;
-      } else if (gamepadButton.touched || this.values.button > Constants.ButtonTouchThreshold) {
+      } else if (gamepadButton.touched && this.values.button > Constants.ButtonTouchThreshold) {
         this.values.state = Constants.ComponentState.TOUCHED;
       } else {
         this.values.state = Constants.ComponentState.DEFAULT;
