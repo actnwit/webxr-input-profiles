@@ -12,10 +12,10 @@
     "src/**"
   ],
   "scripts": {
-    "clean": "gulp clean",
-    "build": "gulp",
-    "cleanBuild": "gulp cleanBuild",
-    "watch": "gulp watch",
+    "clean": "npx gulp clean",
+    "build": "npx gulp",
+    "cleanBuild": "npx gulp cleanBuild",
+    "watch": "npx gulp watch",
     "test": "echo \"Run tests from root\" && exit 1"
   }
 }

@@ -12,10 +12,10 @@
     "src/**"
   ],
   "scripts": {
-    "clean": "gulp clean",
-    "build": "gulp",
+    "clean": "npx gulp clean",
+    "build": "npx gulp",
     "cleanBuild": "npm run clean && npm run build",
-    "watch": "gulp watch",
+    "watch": "npx gulp watch",
     "test": "echo \"Run tests from root\" && exit 1"
   },
   "devDependencies": {
