@@ -12,6 +12,8 @@
     "src/**"
   ],
   "scripts": {
+    "prepublishOnly": "npm run build",
+    "postinstall": "npm run build",
     "clean": "node -e \"try { require('fs').rmdirSync('./dist', { recursive: true }); } catch {}\"",
     "build": "rollup -c",
     "cleanBuild": "npm run clean && npm run build",
