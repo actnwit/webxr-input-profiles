@@ -12,7 +12,7 @@ export default [
     input: ['src/index.js'],
     output: [
       {
-        format: 'es',
+        format: 'cjs',
         file: `${DIST_FOLDER}/motion-controllers.module.js`
       }
     ]
