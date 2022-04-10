@@ -12,13 +12,15 @@
     "src/**"
   ],
   "scripts": {
-    "clean": "npx gulp clean",
-    "build": "npx gulp",
+    "clean": "gulp clean",
+    "build": "gulp",
     "cleanBuild": "npm run clean && npm run build",
-    "watch": "npx gulp watch",
+    "watch": "gulp watch",
     "test": "echo \"Run tests from root\" && exit 1"
   },
   "devDependencies": {
-    "@webxr-input-profiles/registry": "^1.0.0"
+    "@webxr-input-profiles/registry": "^1.0.0",
+    "gulp": "^4.0.2",
+    "gulp-jsoncombine": "^1.0.4"
   }
 }

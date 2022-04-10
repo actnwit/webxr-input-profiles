@@ -12,10 +12,14 @@
     "src/**"
   ],
   "scripts": {
-    "clean": "npx gulp clean",
-    "build": "npx gulp",
-    "cleanBuild": "npx gulp cleanBuild",
-    "watch": "npx gulp watch",
+    "clean": "gulp clean",
+    "build": "gulp",
+    "cleanBuild": "gulp cleanBuild",
+    "watch": "gulp watch",
     "test": "echo \"Run tests from root\" && exit 1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-jsoncombine": "^1.0.4"
   }
 }
