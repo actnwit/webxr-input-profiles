@@ -1,7 +1,7 @@
 {
-  "profileId": "meta-quest-touch-pro",
+  "profileId": "meta-quest-touch-plus",
   "fallbackProfileIds": [
-    "oculus-touch-v2",
+    "oculus-touch-v3",
     "oculus-touch",
     "generic-trigger-squeeze-thumbstick"
   ],
